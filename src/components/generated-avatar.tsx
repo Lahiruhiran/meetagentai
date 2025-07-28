@@ -9,7 +9,7 @@ interface GenaratedAvatarProps {
     variant?: 'botttsNeutral' | 'initials';
 }   
 
-export const GeneratedAvatar = ({ className, seed, variant}: GenaratedAvatarProps) => {
+export const GeneratedAvatar = ({variant, seed, className}: GenaratedAvatarProps) => {
     let avatar;
 
     if (variant === 'botttsNeutral') {
@@ -26,7 +26,7 @@ export const GeneratedAvatar = ({ className, seed, variant}: GenaratedAvatarProp
     return (
         <Avatar className={cn(className)}>
             <AvatarImage src={avatar.toDataUri()} alt='avatar' />
-            <AvatarFallback className="bg-muted">
+            <AvatarFallback>
                 {seed.charAt(0).toUpperCase()}
             </AvatarFallback>
         </Avatar>
